@@ -1,9 +1,9 @@
 package solid.lsp;
 
-public class OrderBonus extends Order{
+public class OrderBonus extends OrderAbstract{
 
-    public OrderBonus(int qnt, int price) {
-        super(qnt, price);
+    public OrderBonus(int price, int qnt) {
+        super(price, qnt);
     }
 
     @Override

@@ -1,9 +1,11 @@
 package solid.srp;
 
+import src.solid.srp.DrawFigure;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Square {
+public class Square implements DrawFigure {
 
     private List<Point> points;
     private int side;
@@ -26,24 +28,26 @@ public class Square {
         return points;
     }
 
-    public int getArea() {
-        return side * side;
+    public int getSide(){
+        return side;
     }
 
-    public void draw() {
-        for (int i = 0; i < side; i++) {
+      public void drawFigure(double scale) {
+        for (int i = 0; i < side*scale; i++) {
             System.out.print("* ");
         }
         System.out.println();
-        for (int i = 0; i < side-2; i++) {
+        for (int i = 0; i < (side*scale)-2; i++) {
             System.out.print("* ");
-            for (int j = 1; j < side - 1; j++) {
+            for (int j = 1; j < (side*scale) - 1; j++) {
                 System.out.print("  ");
             }
             System.out.println("*");
         }
-        for (int i = 0; i < side; i++) {
+        for (int i = 0; i < side*scale; i++) {
             System.out.print("* ");
         }
     }
+
+
 }
