@@ -1,20 +1,19 @@
-public class User{
+public class User implements Saveable {
 	private String name;
-	
-	public User(String name){
+
+	public User(String name) {
 		this.name = name;
 	}
-	
-	public String getName(){
+
+	public String getName() {
 		return name;
 	}
-	
-	public void save(){
+
+	@Override
+	public void save() {
 		Persister persister = new Persister(this);
-		persister.save();
+    	persister.save();
 	}
-	
-	public void report(){
-		System.out.println("Report for user: " + name);
-	}
+
+
 }

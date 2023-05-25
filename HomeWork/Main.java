@@ -1,7 +1,13 @@
 public class Main{
 	public static void main(String[] args){
 		User user = new User("Bob");
-		user.report();
-		user.save();
+
+		Saveable saveable = new Persister(user);
+		saveable.save();
+
+		Repotable repotable = new ReportUser(user);
+		repotable.report();
+
+
 	}
 }
